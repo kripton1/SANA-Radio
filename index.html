@@ -6,11 +6,47 @@
 		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
 		<meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
 		<title>SANA Radio</title>
-		<rel type="stylesheet" href="./assets/css/app.css" />
+		
+		<link rel="stylesheet" href="./assets/css/fontawesome.css" />
+		<link rel="stylesheet" href="./assets/css/app.css" />
 	</head>
 	<body>
 		
+		<header>
+			
+		</header>
+		<main>
+			
+			<div class="TrackInfo">
+				<img class="TrackImage" title="Ride To Ukraine" alt="Track Image" src="./assets/img/test-albumn.jpg" />
+				<p class="TrackName">Ride To Ukraine</p>
+				<p class="TrackAuthor">Tricknick</p>
+			</div>
+			
+			<div class="TrackPanel">
+				<button class="TrackBack"><i class="fas fa-angle-double-left"></i></button>
+				<button class="TrackPlayPause"><i class="fas fa-play"></i></button>
+				<button class="TrackNext"><i class="fas fa-angle-double-right"></i></button>
 
+				<div class="TrackVolume">
+					<button class="TrackMute"><i class="fas fa-volume"></i></button>
+
+					<div class="TrackVolumeSlider">
+						<div class="TrackVolumeHear"></div>
+					</div>
+				</div>
+			
+			</div>
+			
+			<div class="TrackSlider">
+				<div class="TrackSliderListened"></div>
+			</div>
+			
+		</main>
+		<footer>
+		
+		</footer>
+		
 		<script src="./assets/js/app.js"></script>
 	</body>
 </html>

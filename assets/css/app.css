@@ -1,0 +1,128 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+:root{
+	--bg-color: #0f0e17;
+	--light-bg-color: #2b2c34;
+	--orange-color: #ff8906;
+	--red-orange-color: #f25f4c;
+	--red-color: #e53170;
+	--text-color: #fffffe;
+}
+
+html, body{
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	width: 600px!important;
+	height: 200px!important;
+	
+}
+
+/*
+
+--------------------------------------------------
+
+*/
+
+main div.TrackInfo img.TrackImage{
+	width: 150px;
+    height: 150px;
+    border: 1px solid var(--text-color);
+    border-radius: 3px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+main div.TrackInfo img.TrackImage:hover{
+	box-shadow: 0px 0px 15px 1px var(--text-color);
+}
+main div.TrackInfo p.TrackName{
+	position: absolute;
+    top: 50px;
+    left: 250px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+main div.TrackInfo p.TrackAuthor{
+	position: absolute;
+    top: 100px;
+    left: 250px;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/*
+
+--------------------------------------------------
+
+*/
+
+main div.TrackPanel{
+	position: absolute;
+    top: 150px;
+    left: 250px;
+}
+main div.TrackPanel button{
+	font-size: 2rem;
+    padding: 10px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+	outline: none;
+}
+main div.TrackPanel button:hover{
+	color: var(--red-orange-color);
+}
+
+main div.TrackPanel div.TrackVolume{
+	display: inline-block;
+    margin-left: 300px;
+}
+main div.TrackPanel div.TrackVolume div.TrackVolumeSlider{
+	width: 150px;
+    display: inline-block;
+    margin-bottom: 8px;
+    background: grey;
+    height: 5px;
+    border: 3px;
+}
+main div.TrackPanel div.TrackVolume div.TrackVolumeSlider div.TrackVolumeHear{
+	width: 50px;
+    height: 5px;
+    border: 3px;
+    background: var(--red-orange-color);
+}
+
+/*
+
+--------------------------------------------------
+
+*/
+
+main div.TrackSlider{
+	width: 90vw;
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    background: grey;
+    height: 5px;
+    border: 3px;
+}
+main div.TrackSlider div.TrackSliderListened{
+	width: 10vw;
+    height: 5px;
+    border: 3px;
+    background: var(--red-orange-color);
+}
+main div.TrackSlider:hover:after{
+	content: '';
+	position: absolute;
+    width: 25px;
+    height: 25px;
+    left: calc(10vw - 15px);
+    top: -10px;
+    border-radius: 50px;
+    background: var(--text-color);
+}
