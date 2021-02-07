@@ -3,50 +3,61 @@
 	<head>
 		<meta charset="UTF-8">
 		<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-		<meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+		<meta http-equiv="Content-Security-Policy" content="
+			default-src 'self'; 
+			script-src 'self' *; 
+			media-src 'self' https://cf-media.sndcdn.com; 
+			img-src 'self' https://*.sndcdn.com
+		">
+		<meta http-equiv="X-Content-Security-Policy" content="
+			default-src 'self'; 
+			script-src 'self'; 
+			media-src 'self' https://cf-media.sndcdn.com; 
+			img-src 'self' https://*.sndcdn.com
+		">
 		<title>SANA Radio</title>
 		
 		<link rel="stylesheet" href="./assets/css/fontawesome.css" />
 		<link rel="stylesheet" href="./assets/css/app.css" />
 	</head>
 	<body>
-		
-		<header>
-			
-		</header>
 		<main>
 			
 			<div class="TrackInfo">
-				<img class="TrackImage" title="Ride To Ukraine" alt="Track Image" src="./assets/img/test-albumn.jpg" />
-				<p class="TrackName">Ride To Ukraine</p>
-				<p class="TrackAuthor">Tricknick</p>
+				<img class="TrackImage" title="Открыть ссылку в браузере" alt="Обложка трека" src="./assets/img/test-albumn.jpg" />
+				<p class="TrackName">Выберите трек для прослушивания</p>
+				<p class="TrackAuthor">С любовью от SANA Player</p>
+				
+				<div class="TrackControl">
+					<button class="TrackPlayList"><i class="fas fa-list"></i></button>
+					<button class="TrackAdd"><i class="fas fa-plus"></i></button>
+				</div>
 			</div>
 			
 			<div class="TrackPanel">
 				<button class="TrackBack"><i class="fas fa-angle-double-left"></i></button>
 				<button class="TrackPlayPause"><i class="fas fa-play"></i></button>
 				<button class="TrackNext"><i class="fas fa-angle-double-right"></i></button>
+				
+				<p class="TrackDuration"><span class="TrackListened">00:00</span> / <span class="TrackFullDuration">00:00</span></p>
 
 				<div class="TrackVolume">
 					<button class="TrackMute"><i class="fas fa-volume"></i></button>
 
 					<div class="TrackVolumeSlider">
-						<div class="TrackVolumeHear"></div>
+						<input type="range" min="1" max="100" value="100" step="0.5" > 
 					</div>
 				</div>
 			
 			</div>
 			
 			<div class="TrackSlider">
-				<div class="TrackSliderListened"></div>
+				<input type="range" min="1" max="100" value="0" step="0.01" > 
 			</div>
 			
 		</main>
-		<footer>
 		
-		</footer>
-		
+		<script src="./assets/js/jquery.min.js"></script>
 		<script src="./assets/js/app.js"></script>
 	</body>
 </html>

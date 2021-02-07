@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+		<meta http-equiv="Content-Security-Policy" content="
+			default-src 'self'; 
+			script-src 'self'; 
+			media-src 'self' https://cf-media.sndcdn.com; 
+			img-src 'self' https://*.sndcdn.com
+		">
+		<meta http-equiv="X-Content-Security-Policy" content="
+			default-src 'self'; 
+			script-src 'self'; 
+			media-src 'self' https://cf-media.sndcdn.com; 
+			img-src 'self' https://*.sndcdn.com
+		">
+		<title>SANA Radio</title>
+		
+		<link rel="stylesheet" href="./assets/css/fontawesome.css" />
+		<link rel="stylesheet" href="./assets/css/add.css" />
+	</head>
+	<body>
+		<main>
+			
+			<form method="get" action="/">
+				<input type="text" name="url" placeholder="e.g. https://soundcloud.com/piasgermany/the-middle-east-blood" />
+				
+				<button type="submit">Поиск</button>
+			</form>
+			
+			<div class="TrackPreview">
+				<p>Предосмотр трека:</p>
+				<div class="Track">
+					<img class="TrackImage" title="Открыть ссылку в браузере" alt="Обложка трека" src="" />
+					<p class="TrackName"></p>
+					<p class="TrackAuthor">С любовью от SANA Player</p>
+					<p class="TrackDuration">Продолжительность: <span>00:00</span></p>
+				</div>
+				<div class="TrackAction">
+					<button class="TrackListen" title="Прослушать"><i class="fas fa-headphones"></i></button>
+					<button class="TrackAddAlbumn" title="Добавить в альбом"><i class="fas fa-list"></i></button>
+				</div>
+			</div>
+			
+		</main>
+		<script src="./assets/js/jquery.min.js"></script>
+		<script src="./assets/js/add.js"></script>
+	</body>
+</html>

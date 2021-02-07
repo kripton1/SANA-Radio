@@ -15,9 +15,7 @@
 html, body{
 	background-color: var(--bg-color);
 	color: var(--text-color);
-	width: 600px!important;
-	height: 200px!important;
-	
+	overflow: hidden;
 }
 
 /*
@@ -27,30 +25,49 @@ html, body{
 */
 
 main div.TrackInfo img.TrackImage{
-	width: 150px;
-    height: 150px;
+	width: 70px;
+    height: 70px;
     border: 1px solid var(--text-color);
     border-radius: 3px;
     position: absolute;
-    top: 50px;
-    left: 50px;
+    top: 15px;
+    left: 15px;
+	cursor: pointer;
 }
 main div.TrackInfo img.TrackImage:hover{
 	box-shadow: 0px 0px 15px 1px var(--text-color);
 }
 main div.TrackInfo p.TrackName{
 	position: absolute;
-    top: 50px;
-    left: 250px;
-    font-size: 2rem;
+    top: 15px;
+    left: 100px;
+    font-size: 1.3rem;
     font-weight: bold;
+	max-width: 370px;
 }
 main div.TrackInfo p.TrackAuthor{
 	position: absolute;
-    top: 100px;
-    left: 250px;
-    font-size: 1.2rem;
+    top: 45px;
+    left: 100px;
+    font-size: 0.9rem;
     font-weight: 400;
+}
+main div.TrackInfo div.TrackControl{
+	position: absolute;
+    right: 15px;
+    top: 15px;
+}
+main div.TrackInfo button{
+	font-size: 1.1rem;
+    padding: 10px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    outline: none;
+	cursor: pointer;
+}
+main div.TrackInfo button:hover{
+	color: var(--red-orange-color);
 }
 
 /*
@@ -61,38 +78,39 @@ main div.TrackInfo p.TrackAuthor{
 
 main div.TrackPanel{
 	position: absolute;
-    top: 150px;
-    left: 250px;
+    top: 60px;
+    left: 100px;
+	display: -webkit-inline-box;
 }
 main div.TrackPanel button{
-	font-size: 2rem;
+	font-size: 1.3rem;
     padding: 10px;
     background: none;
     border: none;
     color: var(--text-color);
 	outline: none;
+	cursor: pointer;
 }
 main div.TrackPanel button:hover{
 	color: var(--red-orange-color);
 }
 
+main div.TrackPanel p.TrackDuration{
+	width: auto;
+    text-align: center;
+    height: 20px;
+    margin-top: 15px;
+}
+
 main div.TrackPanel div.TrackVolume{
 	display: inline-block;
-    margin-left: 300px;
+    margin-left: 230px;
 }
 main div.TrackPanel div.TrackVolume div.TrackVolumeSlider{
-	width: 150px;
     display: inline-block;
-    margin-bottom: 8px;
-    background: grey;
-    height: 5px;
-    border: 3px;
-}
-main div.TrackPanel div.TrackVolume div.TrackVolumeSlider div.TrackVolumeHear{
-	width: 50px;
-    height: 5px;
-    border: 3px;
-    background: var(--red-orange-color);
+	position: relative;
+    right: -150px;
+	cursor: pointer;
 }
 
 /*
@@ -102,27 +120,14 @@ main div.TrackPanel div.TrackVolume div.TrackVolumeSlider div.TrackVolumeHear{
 */
 
 main div.TrackSlider{
-	width: 90vw;
-    position: absolute;
-    bottom: 50px;
-    left: 50px;
-    background: grey;
-    height: 5px;
-    border: 3px;
-}
-main div.TrackSlider div.TrackSliderListened{
-	width: 10vw;
-    height: 5px;
-    border: 3px;
-    background: var(--red-orange-color);
-}
-main div.TrackSlider:hover:after{
-	content: '';
 	position: absolute;
-    width: 25px;
-    height: 25px;
-    left: calc(10vw - 15px);
-    top: -10px;
-    border-radius: 50px;
-    background: var(--text-color);
+    top: 115px;
+    left: 15px;
+	cursor: pointer;
 }
+main div.TrackSlider input{
+	width: 553px;
+}
+
+
+

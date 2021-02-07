@@ -1,0 +1,101 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+:root{
+	--bg-color: #0f0e17;
+	--light-bg-color: #2b2c34;
+	--orange-color: #ff8906;
+	--red-orange-color: #f25f4c;
+	--red-color: #e53170;
+	--text-color: #fffffe;
+}
+
+html, body{
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	overflow: hidden;
+}
+
+/*
+
+--------------------------------------------------
+
+*/
+
+main form{
+	display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+main form input{
+	border: none;
+    background: var(--light-bg-color);
+    width: 250px;
+    padding: 10px 5px;
+    color: var(--text-color);
+    outline: none;
+    border-radius: 3px 0 0 3px;
+}
+main form button{
+	border: none;
+    border-radius: 0 3px 3px 0;
+    padding: 10px 5px;
+    background: #333;
+    color: var(--red-orange-color);
+    font-weight: bold;
+	outline: none;
+}
+main form button:focus{
+	box-shadow: 0 0 15px 1px var(--red-orange-color);
+}
+
+main div.TrackPreview{
+	display: none; /* flex */
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
+}
+main div.TrackPreview div.Track{
+    align-self: center;
+}
+main div.TrackPreview div.Track img.TrackImage{
+	width: 70px;
+    height: 70px;
+    border: 1px solid var(--text-color);
+    border-radius: 3px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+main div.TrackPreview div.Track img.TrackImage:hover{
+	box-shadow: 0px 0px 15px 1px var(--text-color);
+}
+main div.TrackPreview div.Track p.TrackName{
+    font-size: 1.3rem;
+    font-weight: bold;
+	max-width: 370px;
+}
+main div.TrackPreview div.Track p.TrackAuthor{
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+main div.TrackPreview div.Track p.TrackDuration{
+	font-weight: 100;
+	font-size: 1rem;
+	margin: 20px 0;
+}
+main div.TrackPreview button{
+	font-size: 1.1rem;
+    padding: 10px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    outline: none;
+}
+main div.TrackPreview button:hover{
+	color: var(--red-orange-color);
+}

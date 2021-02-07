@@ -1,0 +1,27 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+:root{
+	--bg-color: #0f0e17;
+	--light-bg-color: #2b2c34;
+	--orange-color: #ff8906;
+	--red-orange-color: #f25f4c;
+	--red-color: #e53170;
+	--text-color: #fffffe;
+}
+
+html, body{
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	width: 600px!important;
+	height: 200px!important;
+	
+}
+
+/*
+
+--------------------------------------------------
+
+*/
