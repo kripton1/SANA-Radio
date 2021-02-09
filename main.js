@@ -125,28 +125,12 @@ app.on('window-all-closed', function () {
 	if (process.platform !== 'darwin') app.quit()
 })
 
-//app.getPath('userData')  -> C:\Users\trewo\AppData\Roaming\SANA-Radio
-
 fs.access(path.join(appFolder, storageFolder), fs.constants.F_OK | fs.constants.W_OK, (err) => {
 	if(err){
-		fs.mkdirSync(path.join(appFolder, storageFolder+'/playlists/sana-playlist/SEAMS-seams'), { recursive: true });
+		fs.mkdirSync(path.join(appFolder, storageFolder+'/playlists'), { recursive: true });
 		
 		console.log('Creating file: ' + path.join(appFolder+'/'+storageFolder, 'playlists.json'));
 		const playlists = fs.createWriteStream(path.join(appFolder+'/'+storageFolder, 'playlists.json'));
-		playlists.end(`{
-	"sana-playlist":{
-		"name": "SANA Radio Playlist",
-		"tracks": [
-			{
-				"title": "SEAMS - seams",
-				"img": "",
-				"mp3": "",
-				"url": "https://",
-				"duration": 36361
-			}
-		]
+		playlists.end(`{}`);
 	}
-}`);
-	}
-	//app.quit();
 });

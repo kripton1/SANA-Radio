@@ -89,6 +89,8 @@ window.addEventListener('DOMContentLoaded', () => {
 		e.preventDefault();
 		if(fullData == null) return false;
 		
+		console.log('button clicked');
+		
 		$('div.TrackPreview button.TrackListen')
 			.attr('disabled', 'true')
 			.html('<i class="fas fa-cog fa-spin"></i>');
@@ -96,17 +98,23 @@ window.addEventListener('DOMContentLoaded', () => {
 		let appFolder = ipcRenderer.sendSync('sana-radio-get-app-folder', null);
 		let storageFolder = 'storage';
 		let trackTitle = fullData.title.split(' ').join('');
+		trackTitle = trackTitle.replace(/\/|\\|"|<|>|:|\*|\?|\||\'/gi, '_');
+		console.log(trackTitle);
 		
 		fs.mkdirSync(path.join(appFolder, storageFolder+'/playlists/sana-history/'+trackTitle), { recursive: true });
+		
+		console.log('made dir');
 		
 		let file = fs.createWriteStream(path.join(appFolder, storageFolder+'/playlists/sana-history/'+trackTitle+'/track.mp3'));
 		http.get(fullData.mp3, function(response) {
 			response.pipe(file)
 				.on('finish',()=>{
+					console.log('got mp3');
 					file = fs.createWriteStream(path.join(appFolder, storageFolder+'/playlists/sana-history/'+trackTitle+'/track.jpg'));
 					http.get(fullData.img, function(response) {
 						response.pipe(file)
 							.on('finish', ()=>{
+								console.log('got jpg');
 								let rawdata = fs.readFileSync(path.join(appFolder, storageFolder+'/playlists.json'));
 								let playlists = JSON.parse(rawdata);
 								
@@ -136,6 +144,8 @@ window.addEventListener('DOMContentLoaded', () => {
 								fullData.playlist = 'sana-history';
 								fullData.mp3 = path.join(appFolder, storageFolder+'/playlists/sana-history/'+trackTitle+'/track.mp3');
 								fullData.img = path.join(appFolder, storageFolder+'/playlists/sana-history/'+trackTitle+'/track.jpg');
+								
+								console.log(fullData);
 								
 								let data = JSON.stringify(playlists);
 								fs.writeFileSync(path.join(appFolder, storageFolder+'/playlists.json'), data);

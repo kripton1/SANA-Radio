@@ -30,7 +30,7 @@ function initTrack(track, createAudio = true, centralFunction = false, arrTracks
 	$('div.TrackPanel p.TrackDuration span.TrackListened').text('00:00');
 	
 	
-	if(createAudio) $('body').append('<audio class="TrackMp3" loop hidden control style="display: none;" src="'+track.mp3+'"></audio>') 
+	if(createAudio || $('audio.TrackMp3').length == 0) $('body').append('<audio class="TrackMp3" loop hidden control style="display: none;" src="'+track.mp3+'"></audio>') 
 	
 	const audio = $('audio.TrackMp3')[0];
 	if(centralFunction) centralFunction(audio, track);
@@ -237,8 +237,9 @@ ipcRenderer.on('sana-radio-get-mp3-audio', (event, arg) => {
 			$('main div.TrackPanel button.TrackBack').off('click');
 			$('main div.TrackPanel button.TrackNext').off('click');
 			
-			audio.play();
-			$('main div.TrackPanel button.TrackPlayPause').html('<i class="fas fa-pause"></i>');
+			setTimeout(()=>{
+				$('main div.TrackPanel button.TrackPlayPause').click();
+			},1000);
 		}, arrTracks, arrNumTrack)
 	}
 });
