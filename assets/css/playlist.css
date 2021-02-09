@@ -28,7 +28,7 @@ header{
 	padding: 5px 15px;
 	font-size: 1.1rem;
 }
-header input.PlaylistSearch{
+header input.TrackSearch{
 	width: 250px;
     background: var(--light-bg-color);
     color: var(--text-color);
@@ -39,13 +39,13 @@ header input.PlaylistSearch{
 	border-radius: 0 3px 3px 0;
     border-left: none;
 }
-header label.PlaylistSearch{
+header label.TrackSearch{
 	background: var(--light-bg-color);
     padding: 7px 10px 9px 10px;
     border-radius: 3px 0 0 3px;
     margin-right: -4px;
 }
-header button.PlaylistAdd{
+header button.TrackAdd{
 	font-size: 1.1rem;
     padding: 10px;
     background: none;
@@ -54,7 +54,7 @@ header button.PlaylistAdd{
     outline: none;
 	cursor: pointer;
 }
-header button.PlaylistAdd:hover{
+header button.TrackAdd:hover{
 	color: var(--red-orange-color);
 }
 
@@ -64,45 +64,68 @@ header button.PlaylistAdd:hover{
 
 */
 
-main table.Playlists{
-	width: 676px;
+main table.TrackList{
+	width: 716px;
 	border-spacing: 0;
 }
-main table.Playlists tr:nth-child(even){
+main table.TrackList tr:nth-child(even){
 	background: #777;
 }
-main table.Playlists tr:hover{
+main table.TrackList tr:hover{
 	background: rgba(119,119,119,0.5)!important;
 }
-main table.Playlists thead tr{
+main table.TrackList thead tr{
 	width: 100vw;
 	background: var(--light-bg-color);
 }
-main table.Playlists tbody tr{
+main table.TrackList tbody tr{
 	width: 100vw;
 	display: block;
 	cursor: pointer;
 }
-main table.Playlists thead tr th, main table.Playlists tbody tr td{
-	height: 10px;
-    line-height: 10px;
+main table.TrackList thead tr th, main table.TrackList tbody tr td{
+	height: 15px;
+    line-height: 15px;
 	text-align: center;
 }
-main table.Playlists th, main table.Playlists td {
+main table.TrackList th, main table.TrackList td {
 	padding: 15px;
 	border: none;
 }
-main table.Playlists tbody, main table.Playlists thead tr { 
+main table.TrackList tbody, main table.TrackList thead tr { 
 	display: block;
 }
-main table.Playlists tbody {
-    height: 260px;
+main table.TrackList tbody {
+    height: 265px;
     overflow-y: auto;
     overflow-x: hidden;
 }
-main table.Playlists tbody td, main table.Playlists thead th {
+main table.TrackList tbody td, main table.TrackList thead th {
     width: 140px;
 }
-main table.Playlists thead tr th:last-child {
+main table.TrackList thead tr th:last-child {
     width: 156px; /* 140px + 16px scrollbar width */
+}
+main table.TrackList tbody tr td img{
+	width: 50px;
+    height: 50px;
+}
+main table.TrackList tbody tr td button{
+	font-size: 1.1rem;
+    padding: 10px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    outline: none;
+	cursor: pointer;
+}
+main table.TrackList tbody tr td button:hover{
+	color: var(--red-orange-color);
+}
+
+.text-normal{
+	font-size: 1rem;
+}
+.text-small{
+	font-size: 0.9rem;
 }

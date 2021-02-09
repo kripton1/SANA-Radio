@@ -15,30 +15,31 @@
 			media-src 'self' https://cf-media.sndcdn.com; 
 			img-src 'self' https://*.sndcdn.com
 		">
-		<title>Плейлисты - SANA Radio</title>
+		<title>Плейлист  - SANA Radio</title>
 		
 		<link rel="stylesheet" href="./assets/css/fontawesome.css" />
-		<link rel="stylesheet" href="./assets/css/list.css" />
+		<link rel="stylesheet" href="./assets/css/playlist.css" />
 	</head>
 	<body>
 		
 		<header>
-			<label for="search" class="PlaylistSearch"><i class="fas fa-search"></i></label>
-			<input type="search" id="search" name="search" class="PlaylistSearch" placeholder="e.g. История, SANA, Джаз, Хип-хоп, Лучшие 90-е..." />
-			<button class="PlaylistAdd"><i class="fas fa-plus"></i></button>
+			<label for="search" class="TrackSearch"><i class="fas fa-search"></i></label>
+			<input type="search" id="search" name="search" class="TrackSearch" placeholder="e.g. Alan Walker, Into the night, Michel Jekson..." />
+			<button class="TrackAdd" title="Добавить песню"><i class="fas fa-plus"></i></button>
 		</header>
 		<main>
-			<table class="Playlists">
+			<table class="TrackList">
 				<thead>
 					<tr>
-						<th>Название плейлиста</th>
-						<th title="Кол-во песен в плейлисте">Кол-во</th>
-						<th title="Длительность плейлиста">Длительность</th>
-						<th title="Размер плейлиста (MB)">Размер</th>
+						<th>Обложка</th>
+						<th title="Название песни">Название</th>
+						<th title="Длительность песни">Длительность</th>
+						<th title="Размер песни (MB)">Размер</th>
+						<th title="Действие с песней">Действие</th>
 					</tr>
 				</thead>
 				<tbody>
-				
+					
 				</tbody>
 			</table>			
 		</main>

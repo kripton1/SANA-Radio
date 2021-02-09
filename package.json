@@ -1,46 +1,45 @@
 {
-	"name": "SANA-Radio",
-	"version": "0.1.0",
-	"description": "SANA Radio - это радио основанное на предпочтениях каждого пользователя, использующего YouTube, SoundCloud, VK Music и Spotify",
-	"main": "main.js",
-	"dependencies": {
-		"electron": "^11.2.2"
-	},
-	"devDependencies": {
-		"electron-builder": "^22.9.1"
-	},
-	"scripts": {
+    "name": "SANA-Radio",
+    "version": "0.1.0",
+    "description": "SANA Radio - это радио основанное на предпочтениях каждого пользователя, использующего YouTube, SoundCloud, VK Music и Spotify",
+    "main": "main.js",
+    "dependencies": {},
+    "devDependencies": {
+        "electron": "^11.2.2",
+        "electron-builder": "^22.9.1"
+    },
+    "scripts": {
         "start": "electron .",
         "pack": "electron-builder --dir",
         "dist": "electron-builder",
         "ship": "electron-builder -p always",
         "ship:win64": "electron-builder -w --x64 -p always",
-		"shit:win32": "electron-builder -w --i32 -p always",
+        "shit:win32": "electron-builder -w --i32 -p always",
         "ship:linuxAll": "electron-builder -l --armv7l --arm64 -p always"
     },
     "keywords": [
-		"SANA",
-		"SANA Radio",
-		"YouTube Radio",
-		"Soundcloud Radio",
-		"VK Music Radio",
-		"Spotify Radio",
-		"Radio"
-	],
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/kripton1/SANA-Radio.git"
-	},
-	"author": {
+        "SANA",
+        "SANA Radio",
+        "YouTube Radio",
+        "Soundcloud Radio",
+        "VK Music Radio",
+        "Spotify Radio",
+        "Radio"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kripton1/SANA-Radio.git"
+    },
+    "author": {
         "name": "SANA Player",
         "email": "ghbdtnrfrltkf@protonmail.com"
     },
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/kripton1/SANA-Radio/issues"
-	},
-	"homepage": "https://github.com/kripton1/SANA-Radio#readme",
-	"build": {
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/kripton1/SANA-Radio/issues"
+    },
+    "homepage": "https://github.com/kripton1/SANA-Radio#readme",
+    "build": {
         "appId": "org.sana-radio.app",
         "productName": "SANA Radio",
         "copyright": "Copyright © 2020 ${author}",
