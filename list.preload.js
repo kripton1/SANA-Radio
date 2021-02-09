@@ -26,8 +26,8 @@ window.addEventListener('DOMContentLoaded', () => {
 				
 				for(track in playlists[id].tracks){
 					let music = playlists[id].tracks[track];
-					let mins = Math.floor((music.duration / 1000) / 60);
-					let secs = Math.floor((music.duration / 1000) % 60);
+					let mins = Math.floor(music.duration / 60);
+					let secs = Math.floor(music.duration % 60);
 					$('main table.TrackList tbody').append(`<tr>
 	<td><img src="`+music.img+`" alt="Обложка песни" /></td>
 	<td class="TrackName">`+music.title+`</td>
@@ -122,8 +122,8 @@ window.addEventListener('DOMContentLoaded', () => {
 					size += getFileSize(tracks[track].mp3);
 				}
 				
-				let mins = Math.floor((duration / 1000) / 60);
-				let secs = Math.floor((duration / 1000) % 60);
+				let mins = Math.floor(duration / 60);
+				let secs = Math.floor(duration % 60);
 				$('table.Playlists tbody').append(`<tr title="Открыть плейлист" data-id="`+playlist+`">
 	<td>`+name+`</td>
 	<td>`+tracks.length+`</td>

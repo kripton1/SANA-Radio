@@ -3,7 +3,10 @@
     "version": "0.1.1",
     "description": "SANA Radio - это радио основанное на предпочтениях каждого пользователя, использующего YouTube, SoundCloud, VK Music и Spotify",
     "main": "main.js",
-    "dependencies": {},
+    "dependencies": {
+        "ffmpeg": "0.0.4",
+        "ytdl-core": "^4.4.5"
+    },
     "devDependencies": {
         "electron": "^11.2.2",
         "electron-builder": "^22.9.1"
@@ -58,7 +61,6 @@
             "icon": "assets/img/favicon.png",
             "category": "Utility",
             "target": [
-                "AppImage",
                 "deb",
                 "tar.gz"
             ]

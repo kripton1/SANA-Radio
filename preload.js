@@ -24,8 +24,8 @@ function initTrack(track, createAudio = true, centralFunction = false, arrTracks
 		$('div.TrackInfo p.TrackAuthor').text(track.title.split('-')[0]);
 	} 
 	
-	let mins = Math.floor((track.duration / 1000) / 60);
-	let secs = Math.floor(track.duration /1000) % 60;
+	let mins = Math.floor(track.duration / 60);
+	let secs = Math.floor(track.duration % 60);
 	$('div.TrackPanel p.TrackDuration span.TrackFullDuration').text( (mins < 10 ? '0' + mins : mins) + ':' + (secs < 10 ? '0' + secs : secs) );
 	$('div.TrackPanel p.TrackDuration span.TrackListened').text('00:00');
 	
