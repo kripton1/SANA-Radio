@@ -26,6 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
 				
 				for(track in playlists[id].tracks){
 					let music = playlists[id].tracks[track];
+					if(music == null) continue;
 					let mins = Math.floor(music.duration / 60);
 					let secs = Math.floor(music.duration % 60);
 					$('main table.TrackList tbody').append(`<tr>
@@ -35,7 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	<td class="text-small">`+getFileSize(music.mp3).toFixed(2)+` MB</td>
 	<td>
 		<button title="Прослушать песню" class="TrackListen" data-id="`+track+`"><i class="fas fa-headphones"></i></button>
-		<button title="Удалить песню" class="TrackDelete"><i class="fas fa-trash"></i></button>
+		<button title="Удалить песню" class="TrackDelete" data-id="`+track+`"><i class="fas fa-trash"></i></button>
 	</td>
 </tr>`);
 				}
@@ -85,6 +86,40 @@ window.addEventListener('DOMContentLoaded', () => {
 					window.close();
 				});
 				
+				$('header button.TrackBack').on('click', (e)=>{
+					e.preventDefault();
+					$(e.currentTarget)
+						.attr('disabled', 'true')
+						.html('<i class="fas fa-cog fa-spin"></i>');
+					window.location.href="list.html";
+				});
+				
+				$('main table.TrackList tbody tr td button.TrackDelete').on('click', (e)=>{
+					e.preventDefault()
+					
+					if(confirm('Вы действительно хотите удалить песню (включая её файлы)?')){
+						$(e.currentTarget)
+							.attr('disabled', 'true')
+							.html('<i class="fas fa-cog fa-spin"></i>');
+						
+						console.log(path);
+						let rawdata = fs.readFileSync(path.join(appFolder, storageFolder+'/playlists.json'));
+						let playlists = JSON.parse(rawdata);
+						let track = playlists[id].tracks[$(e.currentTarget).data('id')];
+						delete playlists[id].tracks[$(e.currentTarget).data('id')];
+						let trackName = track.mp3.split('\\')[track.mp3.split('\\').length - 1];
+						let paths = track.mp3.replace(trackName, '');
+						
+						let data = JSON.stringify(playlists);
+						fs.writeFileSync(path.join(appFolder, storageFolder+'/playlists.json'), data);
+						
+						fs.rmdirSync(paths, { recursive: true });
+						
+						$(e.currentTarget).parent().parent().remove();
+					}
+					
+				});
+				
 			}
 		});
 		return false;
@@ -118,7 +153,9 @@ window.addEventListener('DOMContentLoaded', () => {
 				let size = 0;
 				
 				for(track in tracks){
-					duration += tracks[track].duration;
+					if(tracks[track] == null) continue;
+					
+					duration += parseInt(tracks[track].duration);
 					size += getFileSize(tracks[track].mp3);
 				}
 				

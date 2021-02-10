@@ -43,9 +43,9 @@ header label.TrackSearch{
 	background: var(--light-bg-color);
     padding: 7px 10px 9px 10px;
     border-radius: 3px 0 0 3px;
-    margin-right: -4px;
+    margin-right: -5px;
 }
-header button.TrackAdd{
+header button{
 	font-size: 1.1rem;
     padding: 10px;
     background: none;
@@ -54,8 +54,12 @@ header button.TrackAdd{
     outline: none;
 	cursor: pointer;
 }
-header button.TrackAdd:hover{
+header button:hover{
 	color: var(--red-orange-color);
+}
+
+header button.TrackBack{
+	margin-left: -10px;
 }
 
 /*
